@@ -17,17 +17,28 @@ class ChristmasDate: UIViewController {
     
     @IBOutlet weak var Continue: UIButton!
     
-    @IBAction func ChristmasDate(_ sender: UIDatePicker){
-        let calendar = Calendar.current
-        let ChristmasComponent = DateComponents(calendar: calendar, year: 2019, month: 12, day: 25)
-        let Date = calendar.date(from: ChristmasComponent)
-        
-        if Date == datePicker.date{
-            loader.stopAnimating()
-            Continue.isEnabled = true
-        } else {
-            loader.startAnimating()
-            Continue.isEnabled = false
-        }
+    
+    var calendar: Calendar?
+    var ChristmasComponent: DateComponents?
+    var ChristmasDate: Date?
+    
+    override func viewDidLoad() {
+        calendar = Calendar.current
+        ChristmasComponent = DateComponents(calendar: self.calendar, year: 2019, month: 12, day: 25)
+        ChristmasDate = calendar?.date(from: ChristmasComponent!)
+        loader.startAnimating()
     }
+    
+    func Completed() -> Bool{
+        if calendar!.isDate(datePicker.date, inSameDayAs: ChristmasDate!){
+            self.loader.startAnimating()
+        }
+        return calendar!.isDate(datePicker.date, inSameDayAs: ChristmasDate!)
+    }
+    
+    
+    @IBAction func ChristmasDate(_ sender: UIDatePicker){
+             Continue.isEnabled = Completed()
+
+        }
 }

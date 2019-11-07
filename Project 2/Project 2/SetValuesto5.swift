@@ -16,20 +16,17 @@ class Valuesto5: UIViewController {
     @IBOutlet weak var sliderlabel: UILabel!
     @IBOutlet weak var `continue`: UIButton!
     
+    func switchValues() -> Bool {
+        return Int(slider.value) == 5 && stepperIncrease.value == 5
+    }
+    
+    
     @IBAction func StepperValue(_ sender: Any){
         stepperlabel.text = "\(Int(stepperIncrease.value))"
-        if Int(slider.value) == 5 && Int(stepperIncrease.value) == 5 {
-            `continue`.isEnabled = true
-        } else {
-            `continue`.isEnabled = false
-        }
+       `continue`.isEnabled = switchValues()
     }
     @IBAction func slider(_ sender: Any) {
         sliderlabel.text = "\(Int(slider.value))"
-        if Int(slider.value) == 5 && Int(stepperIncrease.value) == 5 {
-            `continue`.isEnabled = true
-        } else {
-            `continue`.isEnabled = false
-        }
+        `continue`.isEnabled = switchValues()
        }
 }

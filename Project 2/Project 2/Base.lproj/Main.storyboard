@@ -149,7 +149,7 @@
         <!--Valuesto5-->
         <scene sceneID="m4k-Ub-utK">
             <objects>
-                <viewController id="QFn-jg-910" customClass="Valuesto5" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Valuesto5" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QFn-jg-910" customClass="Valuesto5" customModule="Project_2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sre-8C-qgZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,11 +166,10 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="1MA-KE-7KG" userLabel="StepperStack View">
                                         <rect key="frame" x="22" y="156.5" width="156.5" height="32"/>
                                         <subviews>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="qy6-JK-IkA">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="qy6-JK-IkA">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
                                                 <connections>
-                                                    <action selector="StepperValue:" destination="QFn-jg-910" eventType="valueChanged" id="uva-Ck-eF7"/>
-                                                    <action selector="stepperchangevalue:" destination="QFn-jg-910" eventType="valueChanged" id="FpJ-E3-9gm"/>
+                                                    <action selector="StepperValue:" destination="QFn-jg-910" eventType="valueChanged" id="70T-pY-gom"/>
                                                 </connections>
                                             </stepper>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6H-bc-QSe">
@@ -184,11 +183,14 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="swJ-aS-UdQ" userLabel="Slidder Stack View">
                                         <rect key="frame" x="0.0" y="323.5" width="200" height="29"/>
                                         <subviews>
-                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-0Z-LdM">
+                                            <slider opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="Yup-0Z-LdM">
                                                 <rect key="frame" x="-2" y="0.0" width="152.5" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="29" id="O09-yd-9P2"/>
                                                 </constraints>
+                                                <color key="minimumTrackTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="maximumTrackTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="thumbTintColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="slider:" destination="QFn-jg-910" eventType="valueChanged" id="A8Y-3j-ItK"/>
                                                 </connections>
